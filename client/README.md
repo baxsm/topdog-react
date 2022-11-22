@@ -1,0 +1,4 @@
+# TopDog - Frontend
+
+- React
+- TailwindCSS
