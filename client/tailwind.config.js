@@ -5,15 +5,15 @@ module.exports = {
     "./src/*.{js,jsx,ts,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+    },
     colors: {
-      'primaryColor': '#ffcad4',
-      'primary2Color': '#f4acb7',
-      'secondaryColor': '#d8e2dc',
-      'secondary2Color': '#9d8189',
-      'backgroundColor': '#f8edeb',
-      'background2Color': '#ffe5d9',
-    }
+      'primaryColor': '#edf2f4',
+      'primary2Color': '#e63946',
+      'secondaryColor': '#a8dadc',
+      'secondary2Color': '#457b9d',
+      'secondary3Color': '#1d3557',
+    },
   },
   plugins: [],
 }

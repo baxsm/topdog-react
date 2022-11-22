@@ -12,20 +12,16 @@ export default function Header() {
             ref: '/'
         },
         {
-            title: 'Shop',
-            ref: '/shop'
+            title: 'Explore',
+            ref: '/explore'
         },
         {
-            title: 'About Us',
-            ref: '/about-us'
+            title: 'Men',
+            ref: '/explore/?men'
         },
         {
-            title: 'Blog',
-            ref: '/blog'
-        },
-        {
-            title: 'Contact Us',
-            ref: '/contact-us'
+            title: 'Women',
+            ref: '/explore/?women'
         },
     ]
 
@@ -42,7 +38,7 @@ export default function Header() {
         favoriteContainer: '',
         favoriteIcon: 'text-[1.25rem] cursor-pointer hover:text-secondary2Color',
         cartContainer: 'relative',
-        cartButtonContainer: 'flex justify-center place-items-center gap-[0.5rem] rounded-full py-[8px] px-[15px] cursor-pointer gradientButton',
+        cartButtonContainer: 'flex justify-center place-items-center gap-[0.5rem] text-[#fff] rounded-full py-[8px] px-[15px] cursor-pointer bg-secondary3Color hover:bg-secondary2Color',
         cartButtonIcon: 'text-[1.5rem]',
         cartText: 'text-[1rem]',
         cartDataContainer: 'absolute bg-[#fff] top-[4rem] right-[0rem] w-[350px] max-w-[350px] rounded-lg',
