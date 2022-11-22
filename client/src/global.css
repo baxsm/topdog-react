@@ -21,6 +21,10 @@ button {
     border: none;
 }
 
+.headerShadow {
+    box-shadow: 1.95px 1.95px 2.6px rgba(0,0,0,.05);
+}
+
 .gradientButton {
     background: rgb(186,140,201);
     background: linear-gradient(11deg, rgba(186,140,201,0.5886554450881916) 0%, rgba(196,185,203,0.6670868176372111) 61%, rgba(181,102,181,0.5550419997100402) 81%, rgba(194,155,214,0.6614845767408526) 94%); 

@@ -2,15 +2,39 @@ import React from 'react'
 import Logo from '../logo/Logo'
 import { AiOutlineUser, AiOutlineHeart, AiOutlineShopping } from 'react-icons/ai'
 import { useState } from 'react'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 export default function Header() {
 
+    const navigationList = [
+        {
+            title: 'Home',
+            ref: '/'
+        },
+        {
+            title: 'Shop',
+            ref: '/shop'
+        },
+        {
+            title: 'About Us',
+            ref: '/about-us'
+        },
+        {
+            title: 'Blog',
+            ref: '/blog'
+        },
+        {
+            title: 'Contact Us',
+            ref: '/contact-us'
+        },
+    ]
+
     const styles = {
-        container: 'bg-[#fff] flex justify-between place-items-center py-[1rem] px-[2rem] text-[1.125rem]',
+        container: 'bg-[#fff] flex justify-between place-items-center py-[1rem] px-[2rem] text-[1.125rem] headerShadow',
         logoContainer: '',
         navigationContainer: '',
-
+        navigationUl: 'flex justify-between place-items-center gap-[2rem]',
+        navigationLink: 'cursor-pointer duration-300 hover:text-secondary2Color uppercase text-[1rem] font-[600]',
         contentContainer: 'flex justify-center place-items-center gap-[2rem]',
         loginContainer: '',
         loginButtonContainer: 'text-[1.125rem]',
@@ -35,8 +59,18 @@ export default function Header() {
                     <Logo />
                 </div>
                 <div className={styles.navigationContainer}>
-                    <ul>
-                        <li>Data</li>
+                    <ul className={styles.navigationUl}>
+                        {
+                            navigationList.map((item, index) => {
+                                return (
+                                    <li key={index}>
+                                        <Link to={item.ref} className={styles.navigationLink}>
+                                            {item.title}
+                                        </Link>
+                                    </li>
+                                )
+                            })
+                        }
                     </ul>
                 </div>
                 <div className={styles.contentContainer}>
