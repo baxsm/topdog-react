@@ -1,10 +1,12 @@
 import React from 'react'
-import Banner from './banner/Banner'
+import Throwback from './throwback/Throwback'
+import Search from './search/Search'
 
 export default function Home() {
   return (
     <main>
-      <Banner />
+      <Search />
+      <Throwback />
     </main>
   )
 }

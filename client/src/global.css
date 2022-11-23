@@ -16,11 +16,17 @@ body {
     color: rgba(0, 0, 0, 0.85);
 }
 
+a,
+div,
+button,
+svg {
+    transition: 0.3s;
+}
+
 button {
     outline: none;
-    border: none;
 }
 
 .headerShadow {
-    box-shadow: 1.95px 1.95px 2.6px rgba(0,0,0,.05);
+    box-shadow: 1.95px 1.95px 2.6px rgba(0, 0, 0, .05);
 }

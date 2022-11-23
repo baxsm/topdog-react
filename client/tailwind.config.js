@@ -13,6 +13,7 @@ module.exports = {
       'secondaryColor': '#a8dadc',
       'secondary2Color': '#457b9d',
       'secondary3Color': '#1d3557',
+      'textColor': 'rgba(0, 0, 0, 0.85)',
     },
   },
   plugins: [],
