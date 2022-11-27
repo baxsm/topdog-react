@@ -1,9 +1,8 @@
-import Footer from '../common/footer/Footer';
-import Header from '../common/header/Header';
-import Home from '../home/Home';
 import React from 'react';
 import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom';
-import Login from '../login/Login';
+import Home from './home/Home';
+import Header from '../common/header/Header'
+import Footer from '../common/footer/Footer'
 
 const Layout = () => {
   return (
@@ -26,10 +25,6 @@ const router = createBrowserRouter([
       },
     ],
   },
-  {
-    path: "/",
-    element: <Login />
-  }
 ]);
 
 function Pages() {
