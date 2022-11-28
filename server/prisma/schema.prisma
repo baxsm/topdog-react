@@ -8,6 +8,14 @@ generator client {
   provider = "prisma-client-js"
 }
 
+model Banner {
+  id        String     @default(cuid()) @id
+  title     String
+  subTitle  String
+  imageUrl  String
+  reviews  Int
+}
+
 model Products {
   id        String     @default(cuid()) @id
   title     String
@@ -15,4 +23,5 @@ model Products {
   popularity  String
   for       String
   tags    String
+  newArrival Int
 }

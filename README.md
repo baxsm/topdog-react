@@ -3,6 +3,7 @@
 ## Frontend
 - React
 - TailwindCSS
+- SwiperJS
 - Strapi
 - Stripe
 
