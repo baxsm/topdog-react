@@ -3,6 +3,7 @@ import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom';
 import Home from './home/Home';
 import Header from '../common/header/Header'
 import Footer from '../common/footer/Footer'
+import Explore from './explore/Explore';
 
 const Layout = () => {
   return (
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
       },
     ],
   },
+  {
+    path: "/explore",
+    element: <Explore />,
+  }
 ]);
 
 function Pages() {

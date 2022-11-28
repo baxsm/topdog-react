@@ -10,7 +10,7 @@ export default function TopSellerCard() {
         image: 'w-[300px] h-[300px] object-cover rounded-xl cursor-pointer',
         contentContainer: 'w-full flex flex-col gap-[5px]',
         typeContainer: '',
-        type: 'text-[1rem] text-[#959595]',
+        type: 'text-[1rem] text-primaryColor',
         priceContainer: 'flex gap-[1rem] text-[1rem]',
         discountOriginal: 'line-through text-[#999999]',
         discountNew: 'text-[#fff] font-[700]',
