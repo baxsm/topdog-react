@@ -5,7 +5,7 @@ export default function FeaturedCard() {
 
 
     const styles = {
-        card: 'flex flex-col justify-center place-items-center text-start gap-[5px]',
+        card: 'flex flex-col justify-center place-items-center text-start gap-[5px] relative',
         imageContainer: '',
         image: 'w-[33.33vw] h-[400px] object-cover rounded-xl',
         contentContainer: 'w-full flex flex-col gap-[5px]',
@@ -14,6 +14,8 @@ export default function FeaturedCard() {
         priceContainer: 'flex gap-[1rem] text-[1rem]',
         discountOriginal: 'line-through text-[#656565]',
         discountNew: 'text-[#000] font-[700]',
+        newArrivalContainer: 'absolute top-[5px] left-[10px] p-1 bg-[#fff]',
+        newArrivalText: 'text-secondary3Color'
     }
 
 
@@ -32,6 +34,9 @@ export default function FeaturedCard() {
                             <p className={styles.discountOriginal}>$19</p>
                             <p className={styles.discountNew}>$12</p>
                         </div>
+                    </div>
+                    <div className={styles.newArrivalContainer}>
+                        <p className={styles.newArrivalText}>New Arrival</p>
                     </div>
                 </div>
             </Link>

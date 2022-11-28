@@ -41,7 +41,7 @@ export default function Header() {
         cartButtonContainer: 'flex justify-center place-items-center gap-[0.5rem] text-[#fff] rounded-full py-[8px] px-[15px] cursor-pointer bg-secondary3Color hover:bg-secondary2Color',
         cartButtonIcon: 'text-[1.5rem]',
         cartText: 'text-[1rem]',
-        cartDataContainer: 'absolute bg-[#fff] top-[4rem] right-[0rem] w-[350px] max-w-[350px] rounded-lg',
+        cartDataContainer: 'absolute bg-[#fff] top-[4rem] right-[0rem] w-[350px] max-w-[350px] rounded-lg z-10',
         cartDataEmptyContainer: 'p-8 text-center',
         cartDataEmptyText: 'text-[1rem] text-[#757575]',
     }
