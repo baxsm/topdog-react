@@ -24,4 +24,6 @@ model Products {
   for       String
   tags    String
   newArrival Int
+  totalSale Int
+  price Int
 }

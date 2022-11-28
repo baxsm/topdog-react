@@ -7,7 +7,7 @@ export default function FeaturedCard() {
     const styles = {
         card: 'flex flex-col justify-center place-items-center text-start gap-[5px] relative',
         imageContainer: '',
-        image: 'w-[33.33vw] h-[400px] object-cover rounded-xl',
+        image: 'w-[300px] h-[300px] object-cover rounded-xl',
         contentContainer: 'w-full flex flex-col gap-[5px]',
         typeContainer: '',
         type: 'text-[1rem] text-[#343434]',

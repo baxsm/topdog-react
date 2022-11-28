@@ -2,6 +2,7 @@ import React from 'react'
 import Banner from './banner/Banner'
 import Categories from './categories/Categories'
 import Featured from './featured/Featured'
+import TopSeller from './topseller/TopSeller'
 
 export default function Home() {
     return (
@@ -9,6 +10,7 @@ export default function Home() {
             <Banner />
             <Featured />
             <Categories />
+            <TopSeller />
         </main>
     )
 }
