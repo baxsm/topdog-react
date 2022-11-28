@@ -24,12 +24,12 @@ const router = createBrowserRouter([
         path: '/',
         element: <Home />
       },
+      {
+        path: "/explore",
+        element: <Explore />,
+      }
     ],
   },
-  {
-    path: "/explore",
-    element: <Explore />,
-  }
 ]);
 
 function Pages() {
