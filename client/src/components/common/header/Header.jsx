@@ -13,15 +13,15 @@ export default function Header() {
         },
         {
             title: 'Explore',
-            ref: '/explore'
+            ref: '/explore/?q=new'
         },
         {
             title: 'Men',
-            ref: '/explore/?men'
+            ref: '/explore/?q=men'
         },
         {
             title: 'Women',
-            ref: '/explore/?women'
+            ref: '/explore/?q=women'
         },
     ]
 

@@ -14,6 +14,7 @@ export default function Results() {
         setQuery(location.search.split('=')[1])
         if(location.search.split('=')[1]) {
             setLoading(true)
+            console.log('HERE')
         }
     }, [location])
 
@@ -21,7 +22,7 @@ export default function Results() {
     const styles = {
         wrapper: '',
         loaderContainer: 'p-4 mt-[4rem]',
-        loader: 'text-[3rem] loader',
+        loader: 'text-[5rem] loader text-primary2Color',
     }
 
     return (
