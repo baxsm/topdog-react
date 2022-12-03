@@ -9,21 +9,62 @@ generator client {
 }
 
 model Banner {
-  id        String     @default(cuid()) @id
-  title     String
+  id  String     @default(cuid()) @id
+  title String
   subTitle  String
   imageUrl  String
-  reviews  Int
+  reviews Int
 }
 
-model Products {
-  id        String     @default(cuid()) @id
-  title     String
+model Male {
+  id  String     @default(cuid()) @id
+  name  String
   imageUrl  String
   popularity  String
-  for       String
+  tags  String
+  newArrival Int
+  price Int
+  discount Int
+  stock Int
+  comingSoon Int
+  reviews Int
+}
+
+model Female {
+  id  String     @default(cuid()) @id
+  name  String
+  imageUrl  String
+  popularity  String
+  tags  String
+  newArrival Int
+  price Int
+  discount Int
+  stock Int
+  comingSoon Int
+}
+
+model MaleShoes {
+  id  String     @default(cuid()) @id
+  name  String
+  imageUrl  String
+  popularity  String
+  tags  String
+  newArrival Int
+  price Int
+  discount Int
+  stock Int
+  comingSoon Int
+}
+
+model FemaleShoes {
+  id  String     @default(cuid()) @id
+  name  String
+  imageUrl  String
+  popularity  String
   tags    String
   newArrival Int
-  totalSale Int
   price Int
+  discount Int
+  stock Int
+  comingSoon Int
 }

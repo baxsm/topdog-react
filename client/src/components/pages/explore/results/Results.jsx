@@ -14,7 +14,6 @@ export default function Results() {
         setQuery(location.search.split('=')[1])
         if(location.search.split('=')[1]) {
             setLoading(true)
-            console.log('HERE')
         }
     }, [location])
 
