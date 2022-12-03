@@ -1,4 +1,3 @@
-
 datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
@@ -9,62 +8,49 @@ generator client {
 }
 
 model Banner {
-  id  String     @default(cuid()) @id
-  title String
-  subTitle  String
-  imageUrl  String
-  reviews Int
+  id       String @id @default(cuid())
+  title    String
+  subtitle String
+  imageUrl String
 }
 
-model Male {
-  id  String     @default(cuid()) @id
-  name  String
-  imageUrl  String
-  popularity  String
-  tags  String
-  newArrival Int
-  price Int
-  discount Int
-  stock Int
-  comingSoon Int
-  reviews Int
+model User {
+  id       String   @id @default(cuid())
+  name     String
+  age      Int
+  username String   @unique
+  email    String   @unique
+  password String
+  reviews  Review[]
 }
 
-model Female {
-  id  String     @default(cuid()) @id
-  name  String
-  imageUrl  String
-  popularity  String
-  tags  String
-  newArrival Int
-  price Int
-  discount Int
-  stock Int
-  comingSoon Int
+model Review {
+  id        String     @id @default(cuid())
+  message   String
+  stars     Int
+  createdat DateTime   @default(now()) @map(name: "created_at")
+  category  Category[]
+  author    User       @relation(fields: [id], references: [id])
 }
 
-model MaleShoes {
-  id  String     @default(cuid()) @id
-  name  String
-  imageUrl  String
-  popularity  String
-  tags  String
-  newArrival Int
-  price Int
-  discount Int
-  stock Int
-  comingSoon Int
+model Category {
+  id       String     @id @default(cuid())
+  name     String
+  products Products[]
+  reviews  Review[]
 }
 
-model FemaleShoes {
-  id  String     @default(cuid()) @id
-  name  String
-  imageUrl  String
-  popularity  String
-  tags    String
+model Products {
+  id         String     @id @default(cuid())
+  name       String
+  imageUrl   String
+  popularity String
+  details    String[]
   newArrival Int
-  price Int
-  discount Int
-  stock Int
+  price      Int
+  discount   Int
+  stock      Int
   comingSoon Int
+  images     String[]
+  category   Category[]
 }
