@@ -4,6 +4,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import Loading from '../../../common/loading/Loading';
 import axios from 'axios';
 import { useEffect } from 'react';
+import {Link} from 'react-router-dom'
 
 export default function Banner() {
     //http://localhost:8800/api/extra/getBannerData
@@ -23,15 +24,15 @@ export default function Banner() {
     }, [])
 
     const styles = {
-        wrapper: '',
+        wrapper: 'bg-primaryColor',
         swiperContainer: 'swiperBanner',
         imageContainer: 'flex justify-center place-items-center',
-        image: 'w-[100vw] h-[93vh] object-cover object-center blur-[3px]',
-        slideContainer: 'relative flex justify-center place-items-center',
-        slideContent: 'absolute text-[#fff] font-[800] text-center flex justify-center place-items-center gap-[2rem] flex-col',
+        image: 'min-w-[500px] max-w-[500px] h-[93vh] object-cover object-top',
+        slideContainer: 'flex place-items-center gap-[5rem]',
+        slideContent: 'text-[#000] font-[800] text-center flex justify-center place-items-center gap-[2rem] flex-col p-4 text-center w-full',
         title: 'text-[3rem]',
-        subtitle: 'text-[1rem] text-[#d3d3d3] border-b-primary2Color border-b-2'
-
+        subtitle: 'text-[1rem] text-[#353535] border-b-primary2Color border-b-2',
+        link: 'text-[#858585] uppercase tracking-[2px] hover:tracking-[5px] font-[700] hover:text-primary2Color mt-[2rem]',
     }
 
     return (
@@ -44,6 +45,7 @@ export default function Banner() {
                         centeredSlides={true}
                         className={styles.swiperContainer}
                         loop={true}
+                        grabCursor={true}
                     >
                         {
                             data.map((item, index) => {
@@ -56,6 +58,7 @@ export default function Banner() {
                                             <div className={styles.slideContent}>
                                                 <h2 className={styles.title}>{item.title}</h2>
                                                 <p className={styles.subtitle}>$ {item.subtitle}</p>
+                                                <Link to='/explore/?q=new' className={styles.link}>Explore More</Link>
                                             </div>
                                         </div>
                                     </SwiperSlide>

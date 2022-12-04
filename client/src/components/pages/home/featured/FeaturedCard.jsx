@@ -1,7 +1,7 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
-export default function FeaturedCard() {
+export default function FeaturedCard({ featuredData }) {
 
 
     const styles = {
@@ -21,23 +21,25 @@ export default function FeaturedCard() {
 
     return (
         <>
-            <Link to='/'>
+            <Link to={`/explore/?q=${featuredData?.category}`}>
                 <div className={styles.card}>
                     <div className={styles.imageContainer}>
-                        <img src="https://images.pexels.com/photos/5885995/pexels-photo-5885995.jpeg" alt="" className={styles.image}/>
+                        <img src={featuredData?.images.split('|')[0]} alt="" className={styles.image} />
                     </div>
                     <div className={styles.contentContainer}>
                         <div className={styles.typeContainer}>
-                            <h5 className={styles.type}>Long sleeve tshirt</h5>
+                            <h5 className={styles.type}>{featuredData?.name}</h5>
                         </div>
                         <div className={styles.priceContainer}>
-                            <p className={styles.discountOriginal}>$19</p>
-                            <p className={styles.discountNew}>$12</p>
+                            <p className={styles.discountOriginal}>${featuredData?.price + featuredData?.discount}</p>
+                            <p className={styles.discountNew}>${featuredData?.price}</p>
                         </div>
                     </div>
-                    <div className={styles.newArrivalContainer}>
-                        <p className={styles.newArrivalText}>New Arrival</p>
-                    </div>
+                    {/*
+                        <div className={styles.newArrivalContainer}>
+                            <p className={styles.newArrivalText}>New Arrival</p>
+                        </div>
+                    */}
                 </div>
             </Link>
         </>

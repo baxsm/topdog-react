@@ -1,8 +1,26 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Heading from '../../../common/heading/Heading'
 import FeaturedCard from './FeaturedCard'
+import axios from 'axios'
+import Loading from '../../../common/loading/Loading'
 
 export default function Featured() {
+
+    const [isLoading, setIsLoading] = useState(true);
+    const [featuredData, setFeaturedData] = useState([])
+
+    const getFeaturedData = async () => {
+        await axios.get(`http://localhost:8800/api/products/featured`)
+        .then((res) => {
+            setFeaturedData(res.data);
+            setIsLoading(false);
+        })
+    }
+
+    useEffect(() => {
+        getFeaturedData()
+    }, [])
+
     const styles = {
         wrapper: '',
         container: '',
@@ -16,16 +34,21 @@ export default function Featured() {
                 subtitle='Lorem ipsum dolor sit consectetur adipisicing elit. Rem aliquid magni expedita reiciendis, tempora nulla! Dolore veritatis atque nam dolorem facere? Totam earum harum accusantium impedit dolor iste in fuga!'
             />
             <div className={styles.container}>
-                <div className={styles.cardContainer}>
-                    <FeaturedCard />
-                    <FeaturedCard />
-                    <FeaturedCard />
-                    <FeaturedCard />
-                    <FeaturedCard />
-                    <FeaturedCard />
-                    <FeaturedCard />
-                    <FeaturedCard />
-                </div>
+                {
+                    isLoading ? (
+                        <Loading />
+                    ) : (
+                        <div className={styles.cardContainer}>
+                            {
+                                featuredData.map((item, index) => {
+                                    return (
+                                        <FeaturedCard featuredData={item}/>
+                                    )
+                                })
+                            }
+                        </div>
+                    )
+                }
             </div>
         </div>
     )

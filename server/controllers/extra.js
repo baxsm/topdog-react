@@ -1,6 +1,10 @@
-import prisma from '../database/prisma.js'
+import { db } from "../database/db.js";
 
-export const getBannerData = async (req, res) => {
-    const data = await prisma.Banner.findMany({});
-    return res.status(200).json(data)
+export const getBannerData = (req, res) => {
+    const query = "SELECT * FROM banner";
+
+    db.query(query, [], (err, data) => {
+        if (err) return res.status(500).send(err)
+        return res.status(200).json(data)
+    })
 }
