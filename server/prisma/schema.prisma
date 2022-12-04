@@ -14,32 +14,6 @@ model Banner {
   imageUrl String
 }
 
-model User {
-  id       String   @id @default(cuid())
-  name     String
-  age      Int
-  username String   @unique
-  email    String   @unique
-  password String
-  reviews  Review[]
-}
-
-model Review {
-  id        String     @id @default(cuid())
-  message   String
-  stars     Int
-  createdat DateTime   @default(now()) @map(name: "created_at")
-  category  Category[]
-  author    User       @relation(fields: [id], references: [id])
-}
-
-model Category {
-  id       String     @id @default(cuid())
-  name     String
-  products Products[]
-  reviews  Review[]
-}
-
 model Products {
   id         String     @id @default(cuid())
   name       String
@@ -47,10 +21,11 @@ model Products {
   popularity String
   details    String[]
   newArrival Int
+  isFeatured Int
   price      Int
   discount   Int
   stock      Int
   comingSoon Int
   images     String[]
-  category   Category[]
+  category   String
 }
