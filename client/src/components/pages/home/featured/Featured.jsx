@@ -42,7 +42,7 @@ export default function Featured() {
                             {
                                 featuredData.map((item, index) => {
                                     return (
-                                        <FeaturedCard featuredData={item}/>
+                                        <FeaturedCard featuredData={item} key={index}/>
                                     )
                                 })
                             }

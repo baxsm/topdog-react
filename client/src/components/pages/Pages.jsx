@@ -4,6 +4,7 @@ import Home from './home/Home';
 import Header from '../common/header/Header'
 import Footer from '../common/footer/Footer'
 import Explore from './explore/Explore';
+import Product from './product/Product';
 
 const Layout = () => {
   return (
@@ -27,7 +28,11 @@ const router = createBrowserRouter([
       {
         path: "/explore",
         element: <Explore />,
-      }
+      },
+      {
+        path: '/product/:id',
+        element: <Product />
+      },
     ],
   },
 ]);

@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 
 export default function FeaturedCard({ featuredData }) {
 
-
     const styles = {
         card: 'flex flex-col justify-center place-items-center text-start gap-[5px] relative',
         imageContainer: '',
@@ -21,7 +20,7 @@ export default function FeaturedCard({ featuredData }) {
 
     return (
         <>
-            <Link to={`/explore/?q=${featuredData?.category}`}>
+            <Link to={`/product/${featuredData?.id}`}>
                 <div className={styles.card}>
                     <div className={styles.imageContainer}>
                         <img src={featuredData?.images.split('|')[0]} alt="" className={styles.image} />
