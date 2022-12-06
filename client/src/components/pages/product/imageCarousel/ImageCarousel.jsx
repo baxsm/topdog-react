@@ -40,7 +40,8 @@ export default function ImageCarousel() {
 
     const [modalActive, setModalActive] = useState(false);
 
-    const openModal = () => {
+    const openModal = (source) => {
+        setCurrImage(source);
         setModalActive(true);
     }
 
