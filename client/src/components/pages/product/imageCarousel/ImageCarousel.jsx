@@ -59,6 +59,7 @@ export default function ImageCarousel() {
                     modules={[Navigation]}
                     className={styles.swiper}
                     slidesPerView={1}
+                    speed={1200}
                 >
                     {
                         imageList.map((item, index) => {
