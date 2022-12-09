@@ -1,8 +1,9 @@
 import React from 'react'
-import {BsCartPlus} from 'react-icons/bs'
-import {BiLinkExternal} from 'react-icons/bi'
+import { BsCartPlus } from 'react-icons/bs'
+import { BiLinkExternal } from 'react-icons/bi'
+import { Link } from 'react-router-dom'
 
-export default function TopSellerCard() {
+export default function TopSellerCard({ topSellerData }) {
 
     const styles = {
         card: 'topSellerCard flex flex-col justify-center place-items-center text-start gap-[5px] relative',
@@ -23,27 +24,29 @@ export default function TopSellerCard() {
         <>
             <div className={styles.card}>
                 <div className={styles.imageContainer}>
-                    <img src="https://images.pexels.com/photos/5885995/pexels-photo-5885995.jpeg" alt="" className={styles.image} />
+                    <img src={topSellerData.images.split('|')[0]} alt="" className={styles.image} />
                 </div>
                 <div className={styles.contentContainer}>
                     <div className={styles.typeContainer}>
-                        <h5 className={styles.type}>Long sleeve tshirt</h5>
+                        <h5 className={styles.type}>{topSellerData.name}</h5>
                     </div>
                     <div className={styles.priceContainer}>
-                        <p className={styles.discountOriginal}>$19</p>
-                        <p className={styles.discountNew}>$12</p>
+                        <p className={styles.discountOriginal}>${topSellerData.price + topSellerData.discount}</p>
+                        <p className={styles.discountNew}>${topSellerData.price}</p>
                     </div>
                 </div>
                 <div className={styles.optionsContainer}>
                     <div className={styles.cartContainer}>
                         <button className={styles.button}>
-                            <BsCartPlus className={styles.buttonIcon}/>
+                            <BsCartPlus className={styles.buttonIcon} />
                         </button>
                     </div>
                     <div className={styles.detailContainer}>
-                        <button className={styles.button}>
-                            <BiLinkExternal className={styles.buttonIcon}/>
-                        </button>
+                        <Link to={`/product/${topSellerData.id}`}>
+                            <button className={styles.button}>
+                                <BiLinkExternal className={styles.buttonIcon} />
+                            </button>
+                        </Link>
                     </div>
                 </div>
             </div>

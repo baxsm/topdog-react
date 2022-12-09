@@ -40,10 +40,9 @@ export default function Featured() {
                     ) : (
                         <div className={styles.cardContainer}>
                             {
-                                featuredData.map((item, index) => {
-                                    return (
-                                        <FeaturedCard featuredData={item} key={index}/>
-                                    )
+                                featuredData.slice(0,8).map((item, index) => {
+
+                                    return <FeaturedCard featuredData={item} key={index}/>
                                 })
                             }
                         </div>
