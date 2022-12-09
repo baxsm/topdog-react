@@ -1,7 +1,7 @@
 import React from 'react'
 import {MdOutlineAddShoppingCart} from 'react-icons/md'
 
-export default function ProductContent() {
+export default function ProductContent({contentData}) {
 
     const styles = {
         wrapper: 'p-4',
@@ -24,10 +24,10 @@ export default function ProductContent() {
         <div className={styles.wrapper}>
             <div className={styles.container}>
                 <div className={styles.titleContainer}>
-                    <h2 className={styles.title}>Lorem Ipsum</h2>
+                    <h2 className={styles.title}>{contentData.name}</h2>
                 </div>
                 <div className={styles.priceContainer}>
-                    <h5 className={styles.price}>$54.9</h5>
+                    <h5 className={styles.price}>${contentData.price}</h5>
                 </div>
                 <div className={styles.subtitleContainer}>
                     <p className={styles.subtitle}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae itaque ad, vel ab at vero corrupti nobis? Ratione, sunt explicabo. Veniam sunt totam distinctio, dignissimos libero facere nemo voluptatem quibusdam.</p>

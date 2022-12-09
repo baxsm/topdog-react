@@ -5,28 +5,7 @@ import { Navigation } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import ReactModal from 'react-modal'
 
-export default function ImageCarousel() {
-
-    const imageList = [
-        {
-            imageSource: 'https://i.ibb.co/t28xDyR/pexels-photo-13449836.webp',
-        },
-        {
-            imageSource: 'https://i.ibb.co/t28xDyR/pexels-photo-13449836.webp',
-        },
-        {
-            imageSource: 'https://i.ibb.co/t28xDyR/pexels-photo-13449836.webp',
-        },
-        {
-            imageSource: 'https://i.ibb.co/t28xDyR/pexels-photo-13449836.webp',
-        },
-        {
-            imageSource: 'https://i.ibb.co/t28xDyR/pexels-photo-13449836.webp',
-        },
-        {
-            imageSource: 'https://i.ibb.co/t28xDyR/pexels-photo-13449836.webp',
-        },
-    ]
+export default function ImageCarousel({imageData}) {
 
     const styles = {
         wrapper: 'p-4 ',
@@ -36,7 +15,7 @@ export default function ImageCarousel() {
         image: 'w-[500px] h-[500px] object-cover cursor-pointer rounded-lg'
     }
 
-    const [currImage, setCurrImage] = useState(imageList[0].imageSource);
+    const [currImage, setCurrImage] = useState(imageData.split('|')[0] || null);
 
     const [modalActive, setModalActive] = useState(false);
 
@@ -54,7 +33,7 @@ export default function ImageCarousel() {
         <div className={styles.wrapper}>
             <div className={styles.container}>
                 <Swiper
-                    navigation={imageList.length > 1 ? true : false}
+                    navigation={imageData.split('|').length > 1 ? true : false}
                     spaceBetween={0}
                     modules={[Navigation]}
                     className={styles.swiper}
@@ -62,11 +41,12 @@ export default function ImageCarousel() {
                     speed={1200}
                 >
                     {
-                        imageList.map((item, index) => {
+                        imageData.split('|').map((item, index) => {
+                            console.log(item)
                             return (
                                 <SwiperSlide key={index}>
                                     <div className={styles.imageContainer}>
-                                        <img src={item.imageSource} alt="" className={styles.image} onClick={() => { openModal(item.imageSource) }} />
+                                        <img src={item} alt="" className={styles.image} onClick={() => { openModal(item) }} />
                                     </div>
                                 </SwiperSlide>
                             )
