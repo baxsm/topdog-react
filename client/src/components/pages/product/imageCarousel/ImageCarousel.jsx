@@ -42,7 +42,6 @@ export default function ImageCarousel({imageData}) {
                 >
                     {
                         imageData.split('|').map((item, index) => {
-                            console.log(item)
                             return (
                                 <SwiperSlide key={index}>
                                     <div className={styles.imageContainer}>

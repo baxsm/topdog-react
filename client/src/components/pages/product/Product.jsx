@@ -10,7 +10,7 @@ import Loading from '../../common/loading/Loading'
 export default function Product() {
 
     const styles = {
-        wrapper: 'min-h-[90vh] grid grid-cols-1 md:grid-cols-[45vw_auto] p-4',
+        wrapper: 'py-[4rem] grid grid-cols-1 md:grid-cols-[45vw_auto] p-4',
         leftContainer: '',
         rightContainer: '',
     }

@@ -27,3 +27,22 @@ export const getTopSellingProduct = async (req, res) => {
         return res.status(200).json(data)
     })
 }
+
+export const getCategories = async (req, res) => {
+    const query = `SELECT DISTINCT(category) FROM Products`;
+
+    db.query(query, [], (err, data) => {
+        if (err) return res.status(500).send(err)
+        return res.status(200).json(data)
+    })
+}
+
+export const exploreProduct = async (req, res) => {
+    const keyword = req.params.keyword;
+    const query = `SELECT * FROM Products WHERE category LIKE CONCAT('%', '${keyword}', '%') OR name LIKE CONCAT('%', '${keyword}', '%')`;
+
+    db.query(query, [], (err, data) => {
+        if (err) return res.status(500).send(err)
+        return res.status(200).json(data)
+    })
+}

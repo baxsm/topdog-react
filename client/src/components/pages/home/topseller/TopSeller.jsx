@@ -1,10 +1,10 @@
 import React from 'react'
 import { useState } from 'react'
 import Heading from '../../../common/heading/Heading'
-import TopSellerCard from './TopSellerCard'
 import Loading from '../../../common/loading/Loading'
 import axios from 'axios'
 import { useEffect } from 'react'
+import ProductCard from '../../../common/productCard/ProductCard'
 
 
 export default function TopSeller() {
@@ -65,7 +65,7 @@ export default function TopSeller() {
                                         (
                                             filterData.map((item, index) => {
                                                 return (
-                                                    <TopSellerCard topSellerData={item} key={index}/>
+                                                    <ProductCard content={item} key={index}/>
                                                 )
                                             })
                                         ) :

@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import Heading from '../../../common/heading/Heading'
-import FeaturedCard from './FeaturedCard'
 import axios from 'axios'
 import Loading from '../../../common/loading/Loading'
+import ProductCard from '../../../common/productCard/ProductCard'
 
 export default function Featured() {
 
@@ -41,8 +41,7 @@ export default function Featured() {
                         <div className={styles.cardContainer}>
                             {
                                 featuredData.slice(0,8).map((item, index) => {
-
-                                    return <FeaturedCard featuredData={item} key={index}/>
+                                    return <ProductCard content={item} darkText={true} key={index}/>
                                 })
                             }
                         </div>
