@@ -1,7 +1,7 @@
 import React from 'react'
 import ImageCarousel from './imageCarousel/ImageCarousel'
 import ProductContent from './productContent/ProductContent'
-import {useLocation} from 'react-router-dom'
+import { useLocation } from 'react-router-dom'
 import { useState } from 'react'
 import { useEffect } from 'react'
 import axios from 'axios'
@@ -26,12 +26,12 @@ export default function Product() {
         const getData = async () => {
             try {
                 await axios.get(`http://localhost:8800/api/products/searchById/${productID}`)
-                .then((res) => {
-                    setImageData(res.data[0].images)
-                    setContentData(res.data[0])
-                    setIsLoading(false);
-                })
-            }catch(err) {
+                    .then((res) => {
+                        setImageData(res.data[0].images)
+                        setContentData(res.data[0])
+                        setIsLoading(false);
+                    })
+            } catch (err) {
                 setIsLoading(false);
             }
         }
@@ -40,25 +40,27 @@ export default function Product() {
 
 
     return (
-        <div className={isLoading ? 'min-h-[90vh] grid grid-cols-1 p-4' : styles.wrapper}>
-            {
-                isLoading ? (
-                    <Loading />
-                ) : (
-                    <>
-                        <div className={styles.leftContainer}>
-                            {
-                                imageData ? (<ImageCarousel imageData={imageData}/>) : <></>
-                            }
-                        </div>
-                        <div className={styles.rightContainer}>
-                            {
-                                contentData ? (<ProductContent contentData={contentData}/>) : <></>
-                            }
-                        </div>
-                    </>
-                )
-            }
-        </div>
+        <main>
+            <div className={isLoading ? 'min-h-[90vh] grid grid-cols-1 p-4' : styles.wrapper}>
+                {
+                    isLoading ? (
+                        <Loading />
+                    ) : (
+                        <>
+                            <div className={styles.leftContainer}>
+                                {
+                                    imageData ? (<ImageCarousel imageData={imageData} />) : <></>
+                                }
+                            </div>
+                            <div className={styles.rightContainer}>
+                                {
+                                    contentData ? (<ProductContent contentData={contentData} />) : <></>
+                                }
+                            </div>
+                        </>
+                    )
+                }
+            </div>
+        </main>
     )
 }

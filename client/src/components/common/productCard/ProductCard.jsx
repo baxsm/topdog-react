@@ -2,6 +2,8 @@ import React from 'react'
 import { BsCartPlus } from 'react-icons/bs'
 import { BiLinkExternal } from 'react-icons/bi'
 import { Link } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
+import { addToCart } from '../../../redux/cartReducer'
 
 export default function ProductCard({ content, darkText = false }) {
 
@@ -23,6 +25,8 @@ export default function ProductCard({ content, darkText = false }) {
         buttonIcon: 'text-[1.25rem]'
     }
 
+    const dispatch = useDispatch();
+
     return (
         <>
             <div className={styles.card}>
@@ -31,7 +35,7 @@ export default function ProductCard({ content, darkText = false }) {
                 </div>
                 <div className={styles.contentContainer}>
                     <div className={styles.typeContainer}>
-                        <h5 className={darkText? styles.typeDark : styles.type}>{content.name}</h5>
+                        <h5 className={darkText ? styles.typeDark : styles.type}>{content.name}</h5>
                     </div>
                     <div className={styles.priceContainer}>
                         <p className={darkText ? styles.discountOriginalDark : styles.discountOriginal}>${content.price + content.discount}</p>
@@ -40,7 +44,18 @@ export default function ProductCard({ content, darkText = false }) {
                 </div>
                 <div className={styles.optionsContainer}>
                     <div className={styles.cartContainer}>
-                        <button className={styles.button}>
+                        <button
+                            className={styles.button}
+                            onClick={() => {
+                                dispatch(addToCart({
+                                    id: content.id,
+                                    name: content.name,
+                                    imageSrc: content.images.split('|')[0],
+                                    price: content.price,
+                                    quantity: 1,
+                                }))
+                            }}
+                        >
                             <BsCartPlus className={styles.buttonIcon} />
                         </button>
                     </div>
