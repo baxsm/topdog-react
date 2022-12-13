@@ -24,7 +24,7 @@ export default function TopSeller() {
 
     useEffect(() => {
         const getData = async () => {
-            await axios.get(`http://localhost:8800/api/products/topSelling`)
+            await axios.get(`${process.env.REACT_APP_BACKEND_HOST}/api/products/topSelling`)
                 .then((res) => {
                     setData(res.data);
                     setFilterData(res.data);
