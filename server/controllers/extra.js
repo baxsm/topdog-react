@@ -1,7 +1,7 @@
 import { db } from "../database/db.js";
 
 export const getBannerData = (req, res) => {
-    const query = "SELECT * FROM banner";
+    const query = "SELECT * FROM Banner";
 
     db.query(query, [], (err, data) => {
         if (err) return res.status(500).send(err)
