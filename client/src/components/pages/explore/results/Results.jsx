@@ -3,7 +3,6 @@ import { useState } from 'react';
 import { useLocation } from 'react-router-dom'
 import { RiLoader5Fill } from 'react-icons/ri'
 import axios from 'axios'
-import ExploreCard from '../exploreCard/ExploreCard';
 import ProductCard from '../../../common/productCard/ProductCard';
 
 export default function Results() {

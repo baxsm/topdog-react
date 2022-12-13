@@ -1,5 +1,4 @@
 ## Prisma
-
 ```
 npx prisma db push
 ```
@@ -8,11 +7,9 @@ npx prisma db push
 npx prisma generate
 ```
 
-
 ```
 npx prisma studio
 ```
-
 
 ## MySQL
 Local :
