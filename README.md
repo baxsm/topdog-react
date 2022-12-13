@@ -1,14 +1,14 @@
 # TopDog - E-Commerce Website
 
+- Live : https://topdog.vercel.app/
+
 ## Frontend
 - React
 - TailwindCSS
 - SwiperJS
-- Strapi
-- Stripe
+- Redux
 
 ## Backend
 - NodeJS
 - Express
-- Prisma
-- PostgreSQL (Hosted on Heroku)
+- Planetscale
