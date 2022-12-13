@@ -16,7 +16,7 @@ export default function SideBar() {
 
     useEffect(() => {
         const getData = async () => {
-            await axios.get(`http://localhost:8800/api/products/getCategories`)
+            await axios.get(`${process.env.REACT_APP_BACKEND_HOST}/api/products/getCategories`)
                 .then((res) => {
                     var __array = [];
                     for(var x = 0; x < res.data.length; x++) {

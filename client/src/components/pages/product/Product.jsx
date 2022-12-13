@@ -25,7 +25,7 @@ export default function Product() {
     useEffect(() => {
         const getData = async () => {
             try {
-                await axios.get(`http://localhost:8800/api/products/searchById/${productID}`)
+                await axios.get(`${process.env.REACT_APP_BACKEND_HOST}/api/products/searchById/${productID}`)
                     .then((res) => {
                         setImageData(res.data[0].images)
                         setContentData(res.data[0])

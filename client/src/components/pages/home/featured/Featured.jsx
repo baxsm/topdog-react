@@ -10,7 +10,7 @@ export default function Featured() {
     const [featuredData, setFeaturedData] = useState([])
 
     const getFeaturedData = async () => {
-        await axios.get(`http://localhost:8800/api/products/featured`)
+        await axios.get(`${process.env.REACT_APP_BACKEND_HOST}/api/products/featured`)
         .then((res) => {
             setFeaturedData(res.data);
             setIsLoading(false);

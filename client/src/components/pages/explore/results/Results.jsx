@@ -22,7 +22,7 @@ export default function Results() {
         }
 
         const getData = async () => {
-            await axios.get(`http://localhost:8800/api/products/exploreProduct/${location.search.split('=')[1]}`)
+            await axios.get(`${process.env.REACT_APP_BACKEND_HOST}/api/products/exploreProduct/${location.search.split('=')[1]}`)
                 .then((res) => {
                     setData(res.data);
                     setLoading(false)

@@ -7,12 +7,11 @@ import { useEffect } from 'react';
 import {Link} from 'react-router-dom'
 
 export default function Banner() {
-    //http://localhost:8800/api/extra/getBannerData
     const [isLoading, setIsLoading] = useState(true);
     const [data, setData] = useState([])
 
     const getData = async () => {
-        await axios.get(`http://localhost:8800/api/extra/getBannerData`)
+        await axios.get(`${process.env.REACT_APP_BACKEND_HOST}/api/extra/getBannerData`)
         .then((res) => {
             setData(res.data);
             setIsLoading(false);
